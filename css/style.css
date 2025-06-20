@@ -12,15 +12,31 @@ body {
     background-color: #C4C4C4;
 }
 
-h1 { color: #252525; font-size: 40px; }
+.titulo-pagina {
+    color: #252525; font-size: 40px;  color: #FFFFFF;
+    font-weight: bold; 
+    
+}
 
-h2 { color: #0066CC; }
+ /*h1 { color: #252525; font-size: 40px; } */
+h1 { color: #0066CC; background: #CCCCCC;  }
+
+h2 { color: #0066CC; background: #CCCCCC; }
 
 h3 {
     color: #565656;
-    background: #CCCCCC;
     padding: 5px;
 }
+
+ul {
+  padding-left: 35px; /* recuo visual */
+  margin-bottom: 16px; /* após o 'ul' ficará com esta distância para o próximo elemento*/
+}
+
+li {
+  margin-bottom: 8px; /*  'distância' entre cada 'li' */
+}
+
 
 
 /**** HEADER - Cabeçalhos ****/
@@ -126,7 +142,7 @@ main { /* trocado ID (#content) por elemento semantico html*/
     background: #FFFFFF;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 .post-right {
@@ -172,6 +188,35 @@ footer {
 
 .borda-azul {
     border: 1px solid blue;
+}
+
+.italico {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 1em 40px; /* importante: recuo lateral. Isto dá a forma de uma citação */
+  padding: 0.9em 1em;
+  border-left: 4px solid #ccc; /* linha vertical à esquerda  */
+  background-color: #f9f9f9;
+  font-style: italic;          
+}
+
+/* Aplica estilo para blocos de código */
+pre code {
+  display: block;
+  background-color: #f6f8fa;
+  color: #24292e;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 6px;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  border: 1px solid #d0d7de;
+  line-height: 1.5;
+  white-space: pre-wrap;      /* permite quebra de linha */
+  word-break: break-word;     /* quebra palavras longas */
+  max-width: 100%;            /* impede que o bloco extrapole */
 }
 
 
