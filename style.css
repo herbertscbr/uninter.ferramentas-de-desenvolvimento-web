@@ -1,0 +1,207 @@
+/*** LIMPA FORMATAÇÕES ***/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* importante:  "A propriedade box-sizing permite incluir os valores da borda e preenchimento no valor total da div": ver também: https://cursos.alura.com.br/forum/topico-nao-entendi-o-que-e-box-sizing-e-border-box-158465#:~:text=E%20normalmente%20quando%20queremos%20definir,de%20hoje%20no%20trabalho%20:0*/
+}
+
+/**** FORMATAÇÕES GENÉRICAS ****/
+body {
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #C4C4C4;
+}
+
+h1 { color: #252525; font-size: 40px; }
+
+h2 { color: #0066CC; }
+
+h3 {
+    color: #565656;
+    background: #CCCCCC;
+    padding: 5px;
+}
+
+
+/**** HEADER - Cabeçalhos ****/
+header { /* trocado ID (#header) por elemento semantico html */ 
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    background-color: #0066CC;
+    padding: 15px;
+    text-align: center;
+    align-items: center; /* alinha verticalmente os filhos */
+}
+
+#logo {
+    padding: 10px;
+}
+
+#menu {
+    display: flex;
+    justify-content: center; /* centraliza os links horizontalmente */
+    gap: 16px;                /* espaço entre os links */
+    padding: 10px;            /* já existe, mas reafirma */
+}
+
+header a:link, header a:visited { /* trocado ID por elemento semantico html*/
+    color: #FFFFFF;
+    padding: 8px 12px;
+}
+
+header a:hover { /* trocado ID (#header) por elemento semantico html */
+    color: #0066CC;
+    background: #FFFFFF;
+    text-decoration: none;
+}
+
+
+/* **** CONTEÚDO ****/
+main { /* trocado ID (#content) por elemento semantico html*/
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr; /* útil para compatibilidade */
+    max-width: 920px;/*o 'max-width' é diferente do 'width': colocando somente 'width' pooderia quebrar o layout responsivo . Com o  'max', o tamanho máximo se ajustará para ter no máximo aquele tamanho informado */
+    margin: 0 auto;
+
+    /* o padding abaixo (combinado com width de 100%) fez estourar no layout mobile, pois virou 100% + (15+15) - pois o padding está com 15 de cada lado.
+      mas foi resolvido utilizando-se  box-sizing: border-box;, no início das formatações gerais*/
+    padding: 15px;
+    width: 100%;
+}
+
+/**** POSTAGENS PRINCIPAIS ****/
+#posts {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 9;
+}
+
+.post {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #FFFFFF;
+    text-align: justify;
+}
+
+.data-post {
+    font-size: 13px;
+    /*border-bottom: 1px solid #0066CC;*/
+    padding-bottom: 0;
+    margin-bottom: 0;
+    display: block;
+}
+
+.img-post {
+    width: 100%; 
+    max-width: 620px;
+    height: auto;
+    margin: 0 auto;
+    display: block; /* Por padrão, imagens são inline  */
+}
+
+/**** BARRA LATERAL ****/
+
+/*#right-side { // trocado de 'float' para 'grid'. Necessitou adaptações, tais como definir o 'padding'
+    width: 240px;
+    float: right;
+}*/
+#right-side {
+    display: grid;
+    grid-column-start: 9;
+    grid-column-end: 13;
+
+    /*sobre o padding: 
+     O conteúdo do #right-side estava originalmente com 'float: right', o que deixava ficar "colado" ao lado direito, com o espaçamento gerenciado pela largura fixa (que era de 240px) e o fluxo da página.
+     Ao mudar para display: grid, esse controle muda: agora o #right-side ocupa da coluna 9 até a 12 do main, mas não tem padding interno nem largura fixa definida.
+    */
+    padding-left: 15px;
+    padding-right: 15px;
+    /*max-width: 240px; -> testar, pois originalmente estava com tamanho fixo*/
+    /*border: 1px solid red; -> colocar borda pode ser útil para "debugar" o CSS */
+}
+
+#content-right {
+    background: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid red;
+}
+
+.post-right {
+    font-size: 13px;
+    padding: 5px;
+    border-bottom: 1px dotted #CCCCCC;
+}
+
+/**** FORMATAÇÃO LINKS ****/
+a {  text-decoration: none; }
+
+a:link, a:visited {
+    color: #0066CC;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/**** FOOTER - Rodapé ****/
+footer {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    text-align: center;
+    padding: 15px;
+    background: #FFFFFF;
+    color: #0066CC;
+    margin-top: 20px;
+}
+
+/**** OUTROS ****/
+.cor-branca {
+    color: #FFFFFF;
+}
+
+.borda-vermelha {
+    border: 1px solid red;
+}
+.borda-preta {
+    border: 1px solid black;
+}
+
+.borda-azul {
+    border: 1px solid blue;
+}
+
+
+/**** RESPONSIVO - MOBILE 
+    (media query - permite criar uma folha de estilo para uma determinada mídia, mediante consulta e identificação desta mídia)
+****/
+@media only screen and (max-width: 767px) {
+    main {
+        grid-auto-columns: 1fr;
+    }
+    
+    /*para menu se comportar em coluna (vertical):*/
+    #menu { 
+        flex-direction: column;
+        align-items: center;
+        gap: 0; /* sem espaçamento entre links */
+    }
+    
+    #menu a {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    /*Altera o número de grids para os elementos abaixo, ou seja, 
+     para dispositivos mobile terá tamanho menor, proporcionamente */
+    #posts,
+    #right-side,
+    header,
+    footer {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+}
