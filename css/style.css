@@ -12,12 +12,6 @@ body {
     background-color: #C4C4C4;
 }
 
-.titulo-pagina {
-    color: #252525; font-size: 40px;  color: #FFFFFF;
-    font-weight: bold; 
-    
-}
-
  /*h1 { color: #252525; font-size: 40px; } */
 h1 { color: #0066CC; background: #CCCCCC;  }
 
@@ -175,6 +169,15 @@ footer {
 }
 
 /**** OUTROS ****/
+.titulo-pagina {
+    color: #252525; font-size: 40px;  color: #FFFFFF;
+    font-weight: bold;   
+}
+
+.espacamento-superior {
+    padding-top: 20px;
+}
+
 .cor-branca {
     color: #FFFFFF;
 }
