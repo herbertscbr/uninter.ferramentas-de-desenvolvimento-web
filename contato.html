@@ -27,6 +27,19 @@
             <a href="contato.html">Contato</a>
         </nav>
 
+        <!-- CSS Interno-->
+        <style>
+            /** Estilo para o formulário **/
+            fieldset {
+              padding: 3px;
+              box-sizing: border-box;
+            }
+            textarea {
+              width: 98%;
+              max-width: 98%;
+              box-sizing: border-box;
+            }
+        </style>
     </header>
 
     <main>
@@ -37,7 +50,7 @@
                <h1>Contato</h1>
                <div class="espacamento-superior">
                     <form  action="mailto:herbertscbr@gmail.com?subject=Contato via site" method="post" enctype="text/plain">
-                        <fieldset style="padding: 20px;"> <!-- exemplo de css inline (não recomendado, apenas para exemplificar) -->
+                        <fieldset> <!-- style="padding: 10px;" - exemplo de css inline (não recomendado, apenas para exemplificar) -->
                         <legend>Informações de Contato</legend>
                     
                         <p>
@@ -87,7 +100,7 @@
     
     </main>
     
-    <footer >
+    <footer>
             Todos os direitos reservados - HERBERT SOUZA
     </footer>
 
