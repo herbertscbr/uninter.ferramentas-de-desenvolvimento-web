@@ -1,3 +1,10 @@
+/*** VARIÁVEIS GLOBAIS */
+:root {
+    --tema-site: #0066CC;
+    --branco: #ffffff;
+    --dourado: #DEB44B;
+}
+
 /*** LIMPA FORMATAÇÕES ***/
 * {
     margin: 0;
@@ -12,10 +19,15 @@ body {
     background-color: #C4C4C4;
 }
 
- /*h1 { color: #252525; font-size: 40px; } */
-h1 { color: #0066CC; background: #CCCCCC;  }
 
-h2 { color: #0066CC; background: #CCCCCC; }
+p {
+    padding-top: 15px;
+}
+
+ /*h1 { color: #252525; font-size: 40px; } */
+h1 { color: var(--tema-site); background: #CCCCCC;  }
+
+h2 { color: var(--tema-site); background: #CCCCCC; }
 
 h3 {
     color: #565656;
@@ -38,7 +50,7 @@ header { /* trocado ID (#header) por elemento semantico html */
     display: grid;
     grid-column-start: 1;
     grid-column-end: 13;
-    background-color: #0066CC;
+    background-color: var(--tema-site);
     padding: 15px;
     text-align: center;
     align-items: center; /* alinha verticalmente os filhos */
@@ -53,16 +65,17 @@ header { /* trocado ID (#header) por elemento semantico html */
     justify-content: center; /* centraliza os links horizontalmente */
     gap: 16px;                /* espaço entre os links */
     padding: 10px;            /* já existe, mas reafirma */
+    font-weight: bold;
 }
 
 header a:link, header a:visited { /* trocado ID por elemento semantico html*/
-    color: #FFFFFF;
+    color: var(--branco);
     padding: 8px 12px;
 }
 
 header a:hover { /* trocado ID (#header) por elemento semantico html */
-    color: #0066CC;
-    background: #FFFFFF;
+    color: var(--tema-site);
+    background: var(--branco);
     text-decoration: none;
 }
 
@@ -97,7 +110,7 @@ main { /* trocado ID (#content) por elemento semantico html*/
 
 .data-post {
     font-size: 13px;
-    /*border-bottom: 1px solid #0066CC;*/
+    /*border-bottom: 1px solid var(--tema-site);*/
     padding-bottom: 0;
     margin-bottom: 0;
     display: block;
@@ -149,7 +162,7 @@ main { /* trocado ID (#content) por elemento semantico html*/
 a {  text-decoration: none; }
 
 a:link, a:visited {
-    color: #0066CC;
+    color: var(--tema-site);
 }
 
 a:hover {
@@ -164,13 +177,13 @@ footer {
     text-align: center;
     padding: 15px;
     background: #FFFFFF;
-    color: #0066CC;
+    color: var(--tema-site);
     margin-top: 20px;
 }
 
 /**** OUTROS ****/
 .titulo-pagina {
-    color: #252525; font-size: 40px;  color: #FFFFFF;
+    color: #252525; font-size: 40px;  color:var(--branco);
     font-weight: bold;   
 }
 
@@ -179,7 +192,7 @@ footer {
 }
 
 .cor-branca {
-    color: #FFFFFF;
+    color: var(--branco);
 }
 
 .borda-vermelha {
@@ -196,6 +209,10 @@ footer {
 .italico {
   font-style: italic;
 }
+
+.negrito {
+    font-weight: bold;
+  }
 
 blockquote {
   margin: 1em 40px; /* importante: recuo lateral. Isto dá a forma de uma citação */
@@ -214,7 +231,7 @@ pre code {
   margin: 16px 0;
   border-radius: 6px;
   font-family: Consolas, 'Courier New', monospace;
-  font-size: 14px;
+  font-size: 12.5px;
   border: 1px solid #d0d7de;
   line-height: 1.5;
   white-space: pre-wrap;      /* permite quebra de linha */
