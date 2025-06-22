@@ -1,8 +1,10 @@
-/*** VARIÁVEIS GLOBAIS */
+/*** VARIÁVEIS GLOBAIS #0066CC*/
 :root {
-    --tema-site: #0066CC;
+    --tema-site: #E53935;
     --branco: #ffffff;
     --dourado: #DEB44B;
+    --cinza-claro:#C4C4C4;
+    --cinza:#CCCCCC;
 }
 
 /*** LIMPA FORMATAÇÕES ***/
@@ -16,7 +18,7 @@
 body {
     font-size: 16px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #C4C4C4;
+    background-color: var(--cinza-claro);
 }
 
 
@@ -25,9 +27,9 @@ p {
 }
 
  /*h1 { color: #252525; font-size: 40px; } */
-h1 { color: var(--tema-site); background: #CCCCCC;  }
+h1 { color: var(--tema-site); background: var(--cinza);  }
 
-h2 { color: var(--tema-site); background: #CCCCCC; }
+h2 { color: var(--tema-site); background: var(--cinza); }
 
 h3 {
     color: #565656;
@@ -163,7 +165,7 @@ main { /* trocado ID (#content) por elemento semantico html*/
 .post-right {
     font-size: 13px;
     padding: 5px;
-    border-bottom: 1px dotted #CCCCCC;
+    border-bottom: 1px dotted var(--cinza);
 }
 
 /**** FORMATAÇÃO LINKS ****/
@@ -187,6 +189,7 @@ footer {
     background: #FFFFFF;
     color: var(--tema-site);
     margin-top: 20px;
+    font-weight: bold;
 }
 
 /**** OUTROS ****/
