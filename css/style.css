@@ -35,7 +35,7 @@ h3 {
 }
 
 ul {
-  padding-left: 35px; /* recuo visual */
+  padding-left: 35px; 
   margin-bottom: 16px; /* após o 'ul' ficará com esta distância para o próximo elemento*/
 }
 
@@ -124,6 +124,14 @@ main { /* trocado ID (#content) por elemento semantico html*/
     display: block; /* Por padrão, imagens são inline  */
 }
 
+.img-porfolio {    
+    max-width: 620px;
+    height: auto;
+    margin: 0 auto;
+    display: block; 
+    border: 1px dashed black;
+}
+
 /**** BARRA LATERAL ****/
 
 /*#right-side { // trocado de 'float' para 'grid'. Necessitou adaptações, tais como definir o 'padding'
@@ -187,10 +195,6 @@ footer {
     font-weight: bold;   
 }
 
-.espacamento-superior {
-    padding-top: 20px;
-}
-
 .cor-branca {
     color: var(--branco);
 }
@@ -220,6 +224,23 @@ blockquote {
   border-left: 4px solid #ccc; /* linha vertical à esquerda  */
   background-color: #f9f9f9;
   font-style: italic;          
+}
+
+.recuo-lateral {
+  margin-left: 3%; 
+}
+
+.espacamento-superior {
+    padding-top: 20px;
+}
+
+.espacamento-superior50 {
+    padding-top: 50px;
+}
+
+.espacamento-inferior {
+    padding-bottom: 10px;
+    display: block;
 }
 
 /* Aplica estilo para blocos de código */
@@ -258,6 +279,10 @@ pre code {
     #menu a {
         display: block;
         margin-bottom: 8px;
+    }
+
+    .img-porfolio {
+       max-width: 100%;
     }
 
     /*Altera o número de grids para os elementos abaixo, ou seja, 
